@@ -3,7 +3,34 @@
 import { useState } from 'react';
 import { CalendarIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 
+/**
+ * SearchFlights Component
+ * 
+ * A comprehensive flight search form with modern UI and interactive features.
+ * Integrated into the hero section with a white semi-transparent background.
+ * 
+ * Features:
+ * - Round-trip/one-way toggle
+ * - Origin and destination inputs
+ * - Date selection with calendar interface
+ * - Traveler count and cabin class selection
+ * - Responsive design with Tailwind CSS
+ * 
+ * State Management:
+ * - Manages form state for all inputs
+ * - Handles form submission with data collection
+ * - Dynamic return date field based on trip type
+ * 
+ * Styling:
+ * - Semi-transparent white background (90% opacity)
+ * - Backdrop blur effect for depth
+ * - Yellow accent colors for primary actions
+ * - Modern rounded corners and subtle shadows
+ * 
+ * @returns {JSX.Element} The rendered SearchFlights component
+ */
 const SearchFlights = () => {
+  // Form state management
   const [tripType, setTripType] = useState('roundtrip');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
@@ -12,6 +39,10 @@ const SearchFlights = () => {
   const [travellers, setTravellers] = useState('1');
   const [cabinClass, setCabinClass] = useState('Economy');
 
+  /**
+   * Handles form submission and collects all form data
+   * @param {React.FormEvent} e - Form submission event
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log({
@@ -27,7 +58,7 @@ const SearchFlights = () => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-6xl bg-white/90 backdrop-blur-sm rounded-[24px] shadow-lg p-3">
-      {/* Top Navigation Bar */}
+      {/* Top Navigation Bar - Trip type and passenger options */}
       <div className="flex items-center gap-2 mb-2">
         <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-[#FDB813] rounded-lg">
           <svg
@@ -41,6 +72,7 @@ const SearchFlights = () => {
           <span className="text-[10px] font-medium">Flights</span>
         </div>
         
+        {/* Trip type toggle button */}
         <button
           type="button"
           className="flex items-center gap-1 px-2 py-1.5 bg-gray-100/70 rounded-lg text-[10px] text-gray-600 hover:bg-gray-100/90 transition-colors"
@@ -50,6 +82,7 @@ const SearchFlights = () => {
           <ChevronDownIcon className="w-2 h-2" />
         </button>
         
+        {/* Cabin class selector */}
         <button
           type="button"
           className="flex items-center gap-1 px-2 py-1.5 bg-gray-100/70 rounded-lg text-[10px] text-gray-600 hover:bg-gray-100/90 transition-colors"
@@ -59,6 +92,7 @@ const SearchFlights = () => {
           <ChevronDownIcon className="w-2 h-2" />
         </button>
         
+        {/* Traveller count selector */}
         <button
           type="button"
           className="flex items-center gap-1 px-2 py-1.5 bg-gray-100/70 rounded-lg text-[10px] text-gray-600 hover:bg-gray-100/90 transition-colors"
@@ -69,8 +103,9 @@ const SearchFlights = () => {
         </button>
       </div>
 
-      {/* Search Form */}
+      {/* Main search form with origin, destination, and dates */}
       <div className="flex items-center gap-2">
+        {/* Origin input field */}
         <div className="flex-1">
           <div className="relative">
             <label className="absolute left-3 top-2 text-[10px] text-gray-500 font-medium">From</label>
@@ -85,6 +120,7 @@ const SearchFlights = () => {
           </div>
         </div>
 
+        {/* Destination input field */}
         <div className="flex-1">
           <div className="relative">
             <label className="absolute left-3 top-2 text-[10px] text-gray-500 font-medium">To</label>
@@ -99,6 +135,7 @@ const SearchFlights = () => {
           </div>
         </div>
 
+        {/* Departure date picker */}
         <div className="flex-1">
           <div className="relative">
             <label className="absolute left-3 top-2 text-[10px] text-gray-500 font-medium">Departure</label>
@@ -116,6 +153,7 @@ const SearchFlights = () => {
           </div>
         </div>
 
+        {/* Conditional return date picker */}
         {tripType === 'roundtrip' && (
           <div className="flex-1">
             <div className="relative">
@@ -134,6 +172,7 @@ const SearchFlights = () => {
           </div>
         )}
 
+        {/* Search submit button */}
         <button
           type="submit"
           className="h-[52px] px-4 bg-[#FDB813] text-white rounded-lg text-[10px] font-medium hover:bg-[#e5a711] transition-colors whitespace-nowrap"
