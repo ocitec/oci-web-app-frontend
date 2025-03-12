@@ -55,7 +55,7 @@ export default function TourPackages() {
           {packages.map((pkg) => (
             <div 
               key={pkg.id} 
-              className="bg-[#283841]/10 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group"
+              className="bg-[#283841]/5 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group"
             >
               <div className="p-4 md:p-5">
                 <div className="relative">
