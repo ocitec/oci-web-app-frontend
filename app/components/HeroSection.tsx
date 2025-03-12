@@ -10,7 +10,7 @@ import SearchFlights from './SearchFlights';
  * - Responsive height (600px mobile, 700px desktop)
  * - Full-width hero image with semi-transparent overlay (30% opacity)
  * - Centered content layout with heading
- * - Integrated SearchFlights component
+ * - Integrated SearchFlights component positioned at bottom
  * - Z-index layering for proper content stacking
  * 
  * Design:
@@ -22,7 +22,7 @@ import SearchFlights from './SearchFlights';
  */
 const HeroSection = () => {
   return (
-    <div className="relative h-[600px] lg:h-[700px]">
+    <div className="relative h-[700px] lg:h-[800px]">
       {/* Hero Background with overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -37,15 +37,15 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Centered content container with z-index positioning */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4">
-        <div className="max-w-7xl mx-auto text-center text-white space-y-6 mb-12">
+      {/* Hero Content with bottom-aligned search form */}
+      <div className="relative z-10 h-full flex flex-col justify-between px-4">
+        <div className="max-w-7xl mx-auto text-center text-white mt-40">
           <h4 className="text-xl md:text-2xl lg:text-3xl font-bold">
             Top Flights - Hassle-Free Booking - Smooth Travels!
           </h4>
         </div>
 
-        {/* Search Form with white background */}
+        {/* Search Form positioned at bottom */}
         <div className="w-full max-w-6xl mx-auto">
           <SearchFlights />
         </div>
