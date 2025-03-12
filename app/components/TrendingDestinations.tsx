@@ -19,6 +19,8 @@
  * 
  * @returns {JSX.Element} The rendered TrendingDestinations component
  */
+import { FaCirclePlay } from "react-icons/fa6";
+
 export default function TrendingDestinations() {
     // Destination data with high-quality Unsplash images
     const destinations = [
@@ -28,51 +30,51 @@ export default function TrendingDestinations() {
     ];
   
     return (
-      <section className="py-16 bg-white">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Popular Destinations
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover our most sought-after destinations, each offering unique experiences and unforgettable memories
-            </p>
-          </div>
-
-          {/* Responsive destination cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {destinations.map((destination) => (
-              <div
-                key={destination.name}
-                className="relative group overflow-hidden rounded-[32px] bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-              >
-                {/* Destination image with aspect ratio container */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Section header with title and description */}
+        <div className="text-left mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <span className="text-yellow-500 font-bold">Trending</span> Destinations
+          </h2>
+          <p className="mt-4 text-xs text-gray-600 max-w-2xl whitespace-nowrap overflow-hidden text-ellipsis">Tempora Faever Deloribus Id Aut. Es Melores Este Accusantium Laboriosam. Quos Commodi Non Assumenda Quam Illum. Id Omnis Saepe Corrupti Incidunt Qui Sed Delectus. Eaque Minas Ducimus.</p>
+        </div>
+  
+        {/* Responsive destination cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {destinations.map((destination) => (
+            <div
+              key={destination.name}
+              className="relative group bg-white overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 rounded-3xl"
+            >
+              <div className="relative overflow-hidden rounded-3xl">
                 <img
                   src={destination.image}
                   alt={destination.name}
-                  className="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-200 ease-in-out rounded-3xl"
                 />
-                {/* White overlay for destination name */}
-                <div className="absolute top-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-full py-3 px-8 shadow-md">
-                  <h3 className="text-xl font-semibold text-gray-800 text-center">
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent group-hover:from-black/60 transition-colors duration-200" />
+                
+                {/* Destination name with enhanced styling */}
+                <div className="absolute top-1/2 -translate-y-full left-0 right-0 text-center px-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-black-800 tracking-wider font-sans inline-block bg-white/90 backdrop-blur-md px-8 py-3 rounded-[20px] shadow-xl border-2 border-white/50 transition-all duration-300 ease-in-out group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:bg-white">
                     {destination.name}
                   </h3>
                 </div>
-                
-                {/* Play button overlay - only if needed */}
+
+                {/* Play button overlay for Jakarta */}
                 {destination.name === "Jakarta" && (
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-full p-5 shadow-lg hover:scale-105 transition-transform duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-blue-600">
-                        <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
-                      </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-200">
+                      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
+                        <FaCirclePlay className="w-8 h-8 text-gray-800 ml-1" />
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
     );

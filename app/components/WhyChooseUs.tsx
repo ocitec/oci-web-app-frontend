@@ -1,36 +1,15 @@
-/**
- * WhyChooseUs Component
- * 
- * A feature section highlighting the company's unique selling points with a modern,
- * clean design following the project's white background and blue accent colors theme.
- * 
- * Features:
- * - Two-column responsive grid layout
- * - Interactive image showcase with floating card
- * - Bullet-point benefits list
- * - Modern typography with responsive text sizes
- * 
- * Design:
- * - White background (bg-white)
- * - Red accent colors for emphasis
- * - Shadow effects for depth
- * - Responsive padding and spacing
- * 
- * @returns {JSX.Element} The rendered WhyChooseUs component
- */
 export default function WhyChooseUs() {
     return (
       <section className="py-12 px-6 md:px-16 bg-white">
-        {/* Responsive two-column grid layout */}
+        {/* Grid Layout */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left column: Image showcase with floating card overlay */}
+          {/* Left Image Section */}
           <div className="relative">
             <img
               src="/images/scenic-view.jpg"
               alt="Scenic View"
               className="w-full rounded-lg shadow-lg"
             />
-            {/* Floating card with tour package preview */}
             <div className="absolute top-10 left-10 bg-white rounded-lg shadow-xl p-2">
               <img
                 src="/images/tour1.jpg"
@@ -41,7 +20,6 @@ export default function WhyChooseUs() {
                 <h3 className="text-gray-800 font-semibold text-sm">
                   Culpa Est Similique
                 </h3>
-                {/* Rating display */}
                 <div className="flex items-center mt-1">
                   <span className="text-yellow-500 text-lg">★</span>
                   <span className="text-gray-700 text-sm ml-1">4.2</span>
@@ -51,7 +29,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
   
-          {/* Right column: Content and benefits list */}
+          {/* Right Text Section */}
           <div>
             <h2 className="text-3xl font-semibold text-gray-900">
               <span className="text-red-500 font-bold">Why</span> Choose Us
@@ -61,7 +39,7 @@ export default function WhyChooseUs() {
               laborum...
             </p>
   
-            {/* Benefits list with custom checkmark bullets */}
+            {/* Benefits List */}
             <ul className="mt-6 space-y-3 text-gray-700">
               <li className="flex items-start">
                 <span className="text-red-500 font-bold mr-2">✓</span>
@@ -82,6 +60,9 @@ export default function WhyChooseUs() {
             </ul>
           </div>
         </div>
+  
+       
       </section>
     );
   }
+  
