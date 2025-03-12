@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
         {/* Company branding section with logo, description, and social links */}
         <div>
-          <Image src="/images/logo.png" alt="QCI Travels" width={100} height={100} />
+          <Image src="/images/ico-logo2.png" alt="QCI Travels" width={100} height={100} />
           <p className="mt-4 text-sm">
             At QCI Travels and Tourism, our goal is to reduce booking friction and enable users to catch the latest flights without missing out on seats.
           </p>

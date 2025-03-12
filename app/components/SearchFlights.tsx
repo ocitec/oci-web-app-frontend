@@ -58,7 +58,7 @@ const SearchFlights = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-6xl bg-white/90 backdrop-blur-sm rounded-[24px] shadow-lg p-6 mb-16">
+    <form onSubmit={handleSubmit} className="w-full max-w-6xl bg-white/90 backdrop-blur-sm rounded-[24px] shadow-lg p-8 -translate-y-full relative z-20">
       {/* Top Navigation Bar - Trip type and passenger options */}
       <div className="flex items-center gap-2 mb-4">
         <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-[#FDB813] rounded-lg">
@@ -101,13 +101,13 @@ const SearchFlights = () => {
       <div className="flex items-center gap-4">
         {/* Origin input field */}
         <div className="flex-1">
+          <label className="block mb-1.5 text-bold text-gray-600 font-bold">From</label>
           <div className="relative">
-            <label className="absolute left-4 top-3 text-sm text-gray-500 font-medium">From</label>
             <input
               type="text"
               value={from}
               onChange={(e) => setFrom(e.target.value)}
-              className="w-full h-[78px] pt-8 pb-2 px-4 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
               placeholder="Enter city or airport"
               required
             />
@@ -116,13 +116,13 @@ const SearchFlights = () => {
 
         {/* Destination input field */}
         <div className="flex-1">
+          <label className="block mb-1.5 text-bold text-gray-600 font-bold">To</label>
           <div className="relative">
-            <label className="absolute left-4 top-3 text-sm text-gray-500 font-medium">To</label>
             <input
               type="text"
               value={to}
               onChange={(e) => setTo(e.target.value)}
-              className="w-full h-[78px] pt-8 pb-2 px-4 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
               placeholder="Enter city or airport"
               required
             />
@@ -131,13 +131,13 @@ const SearchFlights = () => {
 
         {/* Departure date picker */}
         <div className="flex-1">
+          <label className="block mb-1.5 text-bold text-gray-600 font-bold">Departure</label>
           <div className="relative">
-            <label className="absolute left-4 top-3 text-sm text-gray-500 font-medium">Departure</label>
             <input
               type="text"
               value={departureDate}
               onChange={(e) => setDepartureDate(e.target.value)}
-              className="w-full h-[78px] pt-8 pb-2 px-4 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
               placeholder="Add date"
               required
               onFocus={(e) => (e.target.type = 'date')}
@@ -150,13 +150,13 @@ const SearchFlights = () => {
         {/* Conditional return date picker */}
         {tripType === 'roundtrip' && (
           <div className="flex-1">
+            <label className="block mb-1.5 text-bold text-gray-600 font-bold">Return</label>
             <div className="relative">
-              <label className="absolute left-4 top-3 text-sm text-gray-500 font-medium">Return</label>
               <input
                 type="text"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
-                className="w-full h-[78px] pt-8 pb-2 px-4 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+                className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
                 placeholder="Add date"
                 onFocus={(e) => (e.target.type = 'date')}
                 onBlur={(e) => !e.target.value && (e.target.type = 'text')}
@@ -169,7 +169,7 @@ const SearchFlights = () => {
         {/* Search submit button */}
         <button
           type="submit"
-          className="h-[78px] px-8 bg-[#FDB813] text-white rounded-lg text-base font-medium hover:bg-[#e5a711] transition-colors whitespace-nowrap"
+          className="h-[50px] px-8 bg-[#9c6f03] text-white rounded-lg text-base font-medium hover:bg-[#e5a711] transition-colors whitespace-nowrap"
         >
           Search Flights
         </button>
