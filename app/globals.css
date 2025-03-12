@@ -3,6 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-base: #0a0a0a;
+  --text-hover: #2a2a2a;
+  --transition-duration: 300ms;
+  --paragraph-size-desktop: 15px;
+  --paragraph-size-mobile: 12px;
+  --line-height-desktop: 1.5;
+  --line-height-mobile: 1.4;
+  --font-primary: Arial, Helvetica, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
 }
 
 @theme inline {
@@ -22,5 +38,72 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+}
+
+p {
+  font-size: var(--paragraph-size-desktop);
+  color: var(--text-base);
+  line-height: var(--line-height-desktop);
+  font-weight: var(--font-weight-normal);
+  transition: color var(--transition-duration) ease;
+  font-family: var(--font-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p:hover {
+  color: var(--text-hover);
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: var(--paragraph-size-mobile);
+    line-height: var(--line-height-mobile);
+  }
+}
+
+/* Utility Classes */
+.text-base {
+  font-size: var(--paragraph-size-desktop);
+  line-height: var(--line-height-desktop);
+}
+
+.text-mobile {
+  font-size: var(--paragraph-size-mobile);
+  line-height: var(--line-height-mobile);
+}
+
+.spacing-vertical {
+  margin-bottom: var(--spacing-md);
+}
+
+.spacing-vertical-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.spacing-vertical-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+@media (max-width: 768px) {
+  .text-base {
+    font-size: var(--paragraph-size-mobile);
+    line-height: var(--line-height-mobile);
+  }
 }
