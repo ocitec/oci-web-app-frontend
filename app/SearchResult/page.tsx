@@ -7,6 +7,7 @@ import SearchFlightResult from '../components/SearchPage/SearchFlightResult';
 import Filters from '../components/SearchPage/Filters';
 import AirlineTable from '../components/SearchPage/AirlineTable';
 import FlightList from '../components/SearchPage/FlightList';
+import FlightDetails from '../components/SearchPage/FlightDetails';
 
 export default function SearchResult() {
   const searchParams = useSearchParams();
@@ -31,15 +32,16 @@ export default function SearchResult() {
           <div className="lg:col-span-1 relative z-10">
             <Filters />
           </div>
-          <div className="lg:col-span-3 relative z-10">
-            
-              <div className="mb-4">
+          <div className="lg:col-span-3 relative z-10 space-y-3">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-lg">
                 <AirlineTable />
               </div>
               <div>
                 <FlightList />
               </div>
-            
+              <div>
+                <FlightDetails />
+              </div>
           </div>
         </div>
       </div>
