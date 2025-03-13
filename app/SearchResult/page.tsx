@@ -6,6 +6,7 @@ import HeroSection from '../components/HeroSection';
 import SearchFlightResult from '../components/SearchPage/SearchFlightResult';
 import Filters from '../components/SearchPage/Filters';
 import AirlineTable from '../components/SearchPage/AirlineTable';
+import FlightList from '../components/SearchPage/FlightList';
 
 export default function SearchResult() {
   const searchParams = useSearchParams();
@@ -31,11 +32,14 @@ export default function SearchResult() {
             <Filters />
           </div>
           <div className="lg:col-span-3 relative z-10">
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-6">
-              <div className="mb-6">
+            
+              <div className="mb-4">
                 <AirlineTable />
               </div>
-            </div>
+              <div>
+                <FlightList />
+              </div>
+            
           </div>
         </div>
       </div>
