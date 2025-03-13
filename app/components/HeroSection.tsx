@@ -3,6 +3,7 @@ import SearchFlights from './SearchFlights';
 
 interface HeroSectionProps {
   showSearch?: boolean;
+  reducedHeight?: boolean;
 }
 
 /**
@@ -11,7 +12,7 @@ interface HeroSectionProps {
  * A full-width hero section featuring a background image with optional search functionality.
  * 
  * Features:
- * - Responsive height (600px mobile, 700px desktop)
+ * - Responsive height (can be reduced by 50% with reducedHeight prop)
  * - Full-width hero image with semi-transparent overlay (30% opacity)
  * - Centered content layout with heading
  * - Optional SearchFlights component positioned at bottom
@@ -25,9 +26,9 @@ interface HeroSectionProps {
  * @param {HeroSectionProps} props - Component props
  * @returns {JSX.Element} The rendered HeroSection component
  */
-const HeroSection = ({ showSearch = true }: HeroSectionProps) => {
+const HeroSection = ({ showSearch = true, reducedHeight = false }: HeroSectionProps) => {
   return (
-    <div className="relative h-[700px] lg:h-[800px]">
+    <div className={`relative ${reducedHeight ? 'h-[350px] lg:h-[400px]' : 'h-[700px] lg:h-[800px]'}`}>
       {/* Hero Background with overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -44,7 +45,7 @@ const HeroSection = ({ showSearch = true }: HeroSectionProps) => {
 
       {/* Hero Content with bottom-aligned search form */}
       <div className="relative z-10 h-full flex flex-col justify-between px-4">
-        <div className="max-w-7xl mx-auto text-center text-white mt-40">
+        <div className={`max-w-7xl mx-auto text-center text-white ${reducedHeight ? 'mt-20' : 'mt-40'}`}>
           <h4 className="text-xl md:text-2xl lg:text-3xl font-bold">
             Top Flights - Hassle-Free Booking - Smooth Travels!
           </h4>

@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
+import SearchFlightResult from '../components/SearchPage/SearchFlightResult';
 
 export default function SearchResult() {
   const searchParams = useSearchParams();
@@ -20,8 +21,10 @@ export default function SearchResult() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <HeroSection showSearch={false} />
-      
+      <HeroSection showSearch={false} reducedHeight={true} />
+      <div className="container mx-auto px-4 -mt-16 relative z-30">
+        <SearchFlightResult initialData={searchData} />
+      </div>
     </main>
   );
 }
