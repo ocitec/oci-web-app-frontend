@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CalendarIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { IoAirplane } from "react-icons/io5";
+import { useRouter } from 'next/navigation';
 
 /**
  * SearchFlights Component
@@ -40,21 +41,24 @@ const SearchFlights = () => {
   const [travellers, setTravellers] = useState('1');
   const [cabinClass, setCabinClass] = useState('Economy');
 
+  const router = useRouter();
+
   /**
    * Handles form submission and collects all form data
    * @param {React.FormEvent} e - Form submission event
    */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({
+    const searchParams = new URLSearchParams({
       tripType,
       from,
       to,
       departureDate,
-      returnDate,
+      returnDate: tripType === 'roundtrip' ? returnDate : '',
       travellers,
       cabinClass,
     });
+    router.push(`/SearchResult?${searchParams.toString()}`);
   };
 
   return (

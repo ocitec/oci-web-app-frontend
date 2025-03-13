@@ -1,16 +1,20 @@
 import Image from 'next/image';
 import SearchFlights from './SearchFlights';
 
+interface HeroSectionProps {
+  showSearch?: boolean;
+}
+
 /**
  * HeroSection Component
  * 
- * A full-width hero section featuring a background image with search functionality.
+ * A full-width hero section featuring a background image with optional search functionality.
  * 
  * Features:
  * - Responsive height (600px mobile, 700px desktop)
  * - Full-width hero image with semi-transparent overlay (30% opacity)
  * - Centered content layout with heading
- * - Integrated SearchFlights component positioned at bottom
+ * - Optional SearchFlights component positioned at bottom
  * - Z-index layering for proper content stacking
  * 
  * Design:
@@ -18,9 +22,10 @@ import SearchFlights from './SearchFlights';
  * - Semi-transparent black overlay for better text contrast
  * - Responsive typography with modern styling
  * 
+ * @param {HeroSectionProps} props - Component props
  * @returns {JSX.Element} The rendered HeroSection component
  */
-const HeroSection = () => {
+const HeroSection = ({ showSearch = true }: HeroSectionProps) => {
   return (
     <div className="relative h-[700px] lg:h-[800px]">
       {/* Hero Background with overlay */}
@@ -46,9 +51,11 @@ const HeroSection = () => {
         </div>
 
         {/* Search Form positioned at bottom */}
-        <div className="w-full max-w-6xl mx-auto">
-          <SearchFlights />
-        </div>
+        {showSearch && (
+          <div className="w-full max-w-6xl mx-auto">
+            <SearchFlights />
+          </div>
+        )}
       </div>
     </div>
   );
