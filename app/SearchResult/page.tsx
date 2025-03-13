@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import SearchFlightResult from '../components/SearchPage/SearchFlightResult';
+import Filters from '../components/SearchPage/Filters';
 
 export default function SearchResult() {
   const searchParams = useSearchParams();
@@ -19,11 +20,22 @@ export default function SearchResult() {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Navbar />
       <HeroSection showSearch={false} reducedHeight={true} />
-      <div className="container mx-auto px-4 -mt-16 relative z-30">
+      <div className="container mx-auto px-4 -mt-16 relative z-20">
         <SearchFlightResult initialData={searchData} />
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-1 relative z-10">
+            <Filters />
+          </div>
+          <div className="lg:col-span-3 relative z-10">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-6">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800">Available Flights</h2>
+              <p className="text-gray-600">Flight results will be displayed here</p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );

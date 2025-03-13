@@ -39,13 +39,13 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
     <form onSubmit={handleSubmit} className="flex items-center gap-4 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg p-6">
       {/* Origin input field */}
       <div className="flex-1">
-        <label className="block mb-1.5 text-bold text-gray-600 font-bold">From</label>
+        <label className="block mb-1.5 text-bold text-white font-bold">From</label>
         <div className="relative">
           <input
             type="text"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
-            className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+            className="w-full h-[50px] px-4 py-2 bg-white-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
             placeholder="Enter city or airport"
           />
         </div>
@@ -53,13 +53,13 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
 
       {/* Destination input field */}
       <div className="flex-1">
-        <label className="block mb-1.5 text-bold text-gray-600 font-bold">To</label>
+        <label className="block mb-1.5 text-bold text-white font-bold">To</label>
         <div className="relative">
           <input
             type="text"
             value={to}
             onChange={(e) => setTo(e.target.value)}
-            className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+            className="w-full h-[50px] px-4 py-2 bg-white-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
             placeholder="Enter city or airport"
           />
         </div>
@@ -67,13 +67,13 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
 
       {/* Departure date picker */}
       <div className="flex-1">
-        <label className="block mb-1.5 text-bold text-gray-600 font-bold">Departure</label>
+        <label className="block mb-1.5 text-bold text-white font-bold">Departure</label>
         <div className="relative">
           <input
             type="text"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
-            className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+            className="w-full h-[50px] px-4 py-2 bg-white50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-black"
             placeholder="Add date"
             onFocus={(e) => (e.target.type = 'date')}
             onBlur={(e) => !e.target.value && (e.target.type = 'text')}
@@ -85,13 +85,13 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
       {/* Return date picker */}
       {initialData.tripType === 'roundtrip' && (
         <div className="flex-1">
-          <label className="block mb-1.5 text-bold text-gray-600 font-bold">Return</label>
+          <label className="block mb-1.5 text-bold text-white font-bold">Return</label>
           <div className="relative">
             <input
               type="text"
               value={returnDate}
               onChange={(e) => setReturnDate(e.target.value)}
-              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-white-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
               placeholder="Add date"
               onFocus={(e) => (e.target.type = 'date')}
               onBlur={(e) => !e.target.value && (e.target.type = 'text')}
