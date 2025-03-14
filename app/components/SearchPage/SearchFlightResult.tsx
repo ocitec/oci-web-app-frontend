@@ -36,7 +36,7 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-4 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg p-6">
+    <form onSubmit={handleSubmit} className="flex items-center gap-4 bg-black/80 backdrop-blur-md rounded-lg shadow-lg p-6">
       {/* Origin input field */}
       <div className="flex-1">
         <label className="block mb-1.5 text-bold text-white font-bold">From</label>
@@ -45,7 +45,7 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
             type="text"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
-            className="w-full h-[50px] px-4 py-2 bg-white-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+            className="w-full h-[50px] px-4 py-2 bg-black/40 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400 text-white"
             placeholder="Enter city or airport"
           />
         </div>
@@ -59,7 +59,7 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
             type="text"
             value={to}
             onChange={(e) => setTo(e.target.value)}
-            className="w-full h-[50px] px-4 py-2 bg-white-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+            className="w-full h-[50px] px-4 py-2 bg-black/40 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400 text-white"
             placeholder="Enter city or airport"
           />
         </div>
@@ -73,12 +73,12 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
             type="text"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
-            className="w-full h-[50px] px-4 py-2 bg-white50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-black"
+            className="w-full h-[50px] px-4 py-2 bg-black/40 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400 text-white"
             placeholder="Add date"
             onFocus={(e) => (e.target.type = 'date')}
             onBlur={(e) => !e.target.value && (e.target.type = 'text')}
           />
-          <CalendarIcon className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+          <CalendarIcon className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 w-5 h-5" />
         </div>
       </div>
 
@@ -91,12 +91,12 @@ const SearchFlightResult = ({ initialData }: SearchFlightResultProps) => {
               type="text"
               value={returnDate}
               onChange={(e) => setReturnDate(e.target.value)}
-              className="w-full h-[50px] px-4 py-2 bg-white-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-black/40 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400 text-white"
               placeholder="Add date"
               onFocus={(e) => (e.target.type = 'date')}
               onBlur={(e) => !e.target.value && (e.target.type = 'text')}
             />
-            <CalendarIcon className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <CalendarIcon className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 w-5 h-5" />
           </div>
         </div>
       )}

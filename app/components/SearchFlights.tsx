@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { CalendarIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { IoAirplane } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
+import DatePicker from '../components/DatePicker';
 
 /**
  * SearchFlights Component
@@ -111,7 +112,7 @@ const SearchFlights = () => {
               type="text"
               value={from}
               onChange={(e) => setFrom(e.target.value)}
-              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400 text-black"
               placeholder="Enter city or airport"
               required
             />
@@ -126,7 +127,7 @@ const SearchFlights = () => {
               type="text"
               value={to}
               onChange={(e) => setTo(e.target.value)}
-              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
+              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400 text-black"
               placeholder="Enter city or airport"
               required
             />
@@ -136,37 +137,22 @@ const SearchFlights = () => {
         {/* Departure date picker */}
         <div className="flex-1">
           <label className="block mb-1.5 text-bold text-gray-600 font-bold">Departure</label>
-          <div className="relative">
-            <input
-              type="text"
-              value={departureDate}
-              onChange={(e) => setDepartureDate(e.target.value)}
-              className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
-              placeholder="Add date"
-              required
-              onFocus={(e) => (e.target.type = 'date')}
-              onBlur={(e) => !e.target.value && (e.target.type = 'text')}
-            />
-            <CalendarIcon className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-          </div>
+          <DatePicker
+            value={departureDate}
+            onChange={setDepartureDate}
+            required
+          />
         </div>
 
         {/* Conditional return date picker */}
         {tripType === 'roundtrip' && (
           <div className="flex-1">
             <label className="block mb-1.5 text-bold text-gray-600 font-bold">Return</label>
-            <div className="relative">
-              <input
-                type="text"
-                value={returnDate}
-                onChange={(e) => setReturnDate(e.target.value)}
-                className="w-full h-[50px] px-4 py-2 bg-gray-50/70 rounded-lg focus:ring-2 focus:ring-[#FDB813] focus:ring-opacity-50 border-none text-base placeholder:text-gray-400"
-                placeholder="Add date"
-                onFocus={(e) => (e.target.type = 'date')}
-                onBlur={(e) => !e.target.value && (e.target.type = 'text')}
-              />
-              <CalendarIcon className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-            </div>
+            <DatePicker
+              value={returnDate}
+              onChange={setReturnDate}
+              minDate={departureDate}
+            />
           </div>
         )}
 

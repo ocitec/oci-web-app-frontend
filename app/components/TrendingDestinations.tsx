@@ -33,7 +33,7 @@ export default function TrendingDestinations() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Section header with title and description */}
         <div className="text-left mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-black sm:text-4xl">
           <span className="text-yellow-500 font-bold">Trending</span> Destinations
           </h2>
           <p className="mt-4 text-xs text-gray-600 max-w-2xl whitespace-nowrap overflow-hidden text-ellipsis">Tempora Faever Deloribus Id Aut. Es Melores Este Accusantium Laboriosam. Quos Commodi Non Assumenda Quam Illum. Id Omnis Saepe Corrupti Incidunt Qui Sed Delectus. Eaque Minas Ducimus.</p>
@@ -56,8 +56,8 @@ export default function TrendingDestinations() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent group-hover:from-black/60 transition-colors duration-200" />
                 
                 {/* Destination name with enhanced styling */}
-                <div className="absolute top-1/2 -translate-y-full left-0 right-0 text-center px-4">
-                  <h3 className="text-2xl md:text-3xl font-bold text-black-800 tracking-wider font-sans inline-block bg-white/90 backdrop-blur-md px-8 py-3 rounded-[20px] shadow-xl border-2 border-white/50 transition-all duration-300 ease-in-out group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:bg-white">
+                <div className="absolute top-1/3 -translate-y-1/2 left-0 right-0 text-center px-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-black tracking-wider font-sans inline-block bg-white/90 backdrop-blur-md px-8 py-3 rounded-[20px] shadow-xl border-2 border-white/50 transition-all duration-300 ease-in-out group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:bg-white">
                     {destination.name}
                   </h3>
                 </div>

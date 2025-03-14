@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { FC } from "react";
+import { useRouter } from "next/navigation";
 
 // Types
 interface Flight {
@@ -72,6 +73,18 @@ const FlightSegment: FC<FlightSegmentProps> = ({ title, flight }) => (
 // Flight Details Component
 const FlightDetails: FC = () => {
   const [activeTab, setActiveTab] = React.useState<'details' | 'rules'>('details');
+  const router = useRouter();
+
+  const handleBookNow = () => {
+    const flightData = {
+      outbound: flights[0],
+      inbound: flights[3],
+      totalPrice: 2450,
+      currency: 'USD'
+    };
+    
+    router.push(`/PAXInformation?flight=${encodeURIComponent(JSON.stringify(flightData))}`);
+  };
 
   const flights: Flight[] = [
     {
@@ -173,7 +186,10 @@ const FlightDetails: FC = () => {
 
       {/* Book Now Button */}
       <div className="p-2 flex justify-center border-t">
-        <button className="bg-[#9c6f03] hover:bg-[#e5a711] text-white px-4 py-1.5 font-semibold rounded-md shadow-md transition-colors text-sm focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">
+        <button 
+          onClick={handleBookNow}
+          className="bg-[#9c6f03] hover:bg-[#e5a711] text-white px-4 py-1.5 font-semibold rounded-md shadow-md transition-colors text-sm focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+        >
           BOOK NOW
         </button>
       </div>
